@@ -6,11 +6,6 @@
 
 /* HEADER */
 
-body{
-    height: 100vh;
-    overflow: hidden;
-}
-
 #header,
 #footer{
     background-color: bisque;
@@ -49,10 +44,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.box.easy{
-   
 }
 
 .box.clicked{
