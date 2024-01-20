@@ -1,41 +1,25 @@
 const button = document.getElementById('play-btn');
 const containerGrid = document.getElementById('container-grid');
-const optionsDifficulty = document.querySelectorAll('.difficulty-select');
+const optionsDifficulty = document.querySelectorAll('#difficulty-select');
 
-getGrid(containerGrid);
+let currentDifficulty = 100;
+let classDifficulty = 'easy';
 
-button.addEventListener('click', function(){
-    getGrid(containerGrid);
-    console.clear()
-});
+for (let i = 0; i < optionsDifficulty.length; i++) {
+    let difficultyOption = optionsDifficulty[i];
 
-function getGrid(container, numberBox){
-    container.innerHTML = '';
-    
-    for(let i = 1; i <= 100; i++){
-        const boxIndex = generateBox(i);
-        container.append(boxIndex);
-    }
-}
-
-function generateBox(text){
-    const box = document.createElement('div');
-    box.classList.add('box');
-    box.innerText = text;
-    box.addEventListener('click', function(){
-        clickbox(this);
-        console.log(text)
+    difficultyOption.addEventListener('click', function () {
+        const valueDifficulty = this.value;
+        classDifficulty = handleDifficultyClick(valueDifficulty);
     });
-
-    return box;
 }
 
-function clickbox(element){
-    element.classList.toggle('clicked');
-}
-
-let bomb = []
-
+// evento che al click del tasto play richiama la funzione genera griglia
+button.addEventListener('click', function(){
+    console.log('Play button clicked');
+    getGrid(containerGrid, currentDifficulty, classDifficulty);
+    console.clear();
+});
 
 while(bomb.length < 16){
     let myNums = [Math.floor(Math.random() * (100 - 1) ) + 1];
