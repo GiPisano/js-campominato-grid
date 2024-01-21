@@ -2,8 +2,8 @@ const button = document.getElementById('play-btn');
 const containerGrid = document.getElementById('container-grid');
 const optionsDifficulty = document.querySelectorAll('#difficulty-select');
 
-let currentDifficulty;
-let classDifficulty;
+let currentDifficulty = 100;
+let classDifficulty = 'easy';
 let bombList = [];
 let gameOver = false;
 
@@ -23,7 +23,9 @@ for (let i = 0; i < optionsDifficulty.length; i++) {
 // evento che al click del tasto play richiama la funzione genera griglia
 button.addEventListener('click', function(){
     gameOver = false;
-    
+    bombList = generateBombList(16, currentDifficulty);
+    getGrid(containerGrid, currentDifficulty, classDifficulty);
     console.clear();
+
 });
 

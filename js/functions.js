@@ -54,8 +54,10 @@ function clickbox(element) {
     if(!gameOver){
         if(bombList.includes(boxIndex)){
             console.log('buum');
+            revealAllBombs()
             element.classList.add('bomb');
             gameOver = true;
+            
             alert('hai perso');
         }else{
             console.log('vuoto');
@@ -81,4 +83,16 @@ function generateBombList(bombs, classe){
     }
     console.table(bombList)
     return bombList
+}
+
+// Aggiungi questa funzione per mostrare tutte le bombe
+function revealAllBombs() {
+    const boxes = document.querySelectorAll('.box');
+    for (let i = 0; i < boxes.length; i++) {
+        const box = boxes[i];
+        const boxIndex = parseInt(box.innerText);
+        if (bombList.includes(boxIndex)) {
+            box.classList.add('bomb');
+        }
+    }
 }
