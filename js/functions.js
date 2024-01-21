@@ -37,17 +37,13 @@ function getGrid(container, numberBox, difficultyClass) {
 function generateBox(text, difficultyClass) {
     const box = document.createElement('div');
     box.classList.add('box', difficultyClass);
-    box.setAttribute('data-index', text)
+    box.setAttribute('data-index', text);
 
-    // 
-
+    // evento che al click fa comparire il testo e lo colora
     box.addEventListener('click', function(){
         box.innerText = text;
         clickbox(this);
-        
-    });
-    // 
-
+    })
     return box;
 }
 
@@ -55,23 +51,25 @@ function generateBox(text, difficultyClass) {
 function clickbox(element) {
     const boxIndex = parseInt(element.innerText);
     console.log('Casella cliccata con testo:', boxIndex);
-
     if(!gameOver){
+        score++;
         if(bombList.includes(boxIndex)){
             console.log('buum');
-            revealAllBombs()
+            revealAllBombs();
             element.classList.add('bomb');
             gameOver = true;
             
             alert('hai perso');
         }else{
             console.log('vuoto');
-            element.classList.add('clicked');    
-            // allert('hai vinto')    
-        }
+            element.classList.add('clicked');   
+            scoreUser.innerText = `Il tuo punteggio è: ${score}`
+        } 
+        
     }else {
         // resetto le variabili
         gameOver = false;
+        score = 0;
         bombList = generateBombList(16, currentDifficulty);
         getGrid(containerGrid, currentDifficulty, classDifficulty);
         console.clear();

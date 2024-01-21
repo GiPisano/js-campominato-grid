@@ -9,6 +9,7 @@
 #header{
     background-color: bisque;
     padding: 15px 0;
+    height: 200px;
 }
 
 #header,
@@ -18,17 +19,21 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
 }
 
 #main{
     background-color: blanchedalmond;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: calc(100vh - 200px);
+    
 }
 
 #container-grid{
-    margin: 50px;
+    margin: 30px;
     height: 500px;
     width: 500px;
     border: 3px solid black;
@@ -67,3 +72,6 @@
     background-color: rgb(156, 15, 15);
 }
 
+.score{
+    padding-top: 30px;
+}

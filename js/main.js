@@ -1,11 +1,14 @@
 const button = document.getElementById('play-btn');
 const containerGrid = document.getElementById('container-grid');
 const optionsDifficulty = document.querySelectorAll('#difficulty-select');
+const scoreUser = document.querySelector('.score');
 
 let currentDifficulty = 100;
 let classDifficulty = 'easy';
 let bombList = [];
 let gameOver = false;
+let score = 0;
+
 
 // scorro nelle opzioini della difficoltà
 for (let i = 0; i < optionsDifficulty.length; i++) {
@@ -26,6 +29,5 @@ button.addEventListener('click', function(){
     bombList = generateBombList(16, currentDifficulty);
     getGrid(containerGrid, currentDifficulty, classDifficulty);
     console.clear();
-
 });
 
