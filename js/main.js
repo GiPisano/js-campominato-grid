@@ -12,7 +12,7 @@ for (let i = 0; i < optionsDifficulty.length; i++) {
     let difficultyOption = optionsDifficulty[i];
 
     // evento che prende l'opzione singolarmente e fa cambiare la classe dell'opzione 
-    difficultyOption.addEventListener('click', function () {
+    difficultyOption.addEventListener('change', function () {
         const valueDifficulty = this.value;
         classDifficulty = handleDifficultyClick(valueDifficulty);
         getGrid(containerGrid, currentDifficulty, classDifficulty);

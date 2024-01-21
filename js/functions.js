@@ -64,7 +64,7 @@ function clickbox(element) {
             element.classList.add('clicked');        
         }
     }else {
-        // Inizia una nuova partita resettando le variabili
+        // resetto le variabili
         gameOver = false;
         bombList = generateBombList(16, currentDifficulty);
         getGrid(containerGrid, currentDifficulty, classDifficulty);
@@ -85,7 +85,7 @@ function generateBombList(bombs, classe){
     return bombList
 }
 
-// Aggiungi questa funzione per mostrare tutte le bombe
+//funzione per mostrare tutte le bombe
 function revealAllBombs() {
     const boxes = document.querySelectorAll('.box');
     for (let i = 0; i < boxes.length; i++) {
