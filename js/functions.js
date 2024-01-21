@@ -37,11 +37,16 @@ function getGrid(container, numberBox, difficultyClass) {
 function generateBox(text, difficultyClass) {
     const box = document.createElement('div');
     box.classList.add('box', difficultyClass);
+    box.setAttribute('data-index', text)
 
-    box.innerText = text;
+    // 
+
     box.addEventListener('click', function(){
+        box.innerText = text;
         clickbox(this);
+        
     });
+    // 
 
     return box;
 }
@@ -61,7 +66,8 @@ function clickbox(element) {
             alert('hai perso');
         }else{
             console.log('vuoto');
-            element.classList.add('clicked');        
+            element.classList.add('clicked');    
+            // allert('hai vinto')    
         }
     }else {
         // resetto le variabili
@@ -90,9 +96,10 @@ function revealAllBombs() {
     const boxes = document.querySelectorAll('.box');
     for (let i = 0; i < boxes.length; i++) {
         const box = boxes[i];
-        const boxIndex = parseInt(box.innerText);
+        const boxIndex = parseInt(box.getAttribute('data-index'));
         if (bombList.includes(boxIndex)) {
             box.classList.add('bomb');
+            box.innerText = boxIndex;
         }
     }
 }

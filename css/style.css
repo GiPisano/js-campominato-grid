@@ -41,17 +41,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .box.easy{
     width: 10%;
+    height: 10%;;
 }
+
 .box.medium{
     width: calc(100% / 9);
+    height: calc(100% / 9);;
 }
 
 .box.hard{
     width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .box.clicked{
