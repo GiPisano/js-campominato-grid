@@ -64,6 +64,14 @@ function clickbox(element) {
             console.log('vuoto');
             element.classList.add('clicked');   
             scoreUser.innerText = `Il tuo punteggio è: ${score}`
+
+            const boxes = document.querySelectorAll('.box');
+            const boxclicked = document.querySelectorAll('.clicked');
+
+            if(boxes.length - bombList.length == boxclicked.length){
+                alert('hai vinto')
+                revealAllBombs()
+            }
         } 
         
     }else {

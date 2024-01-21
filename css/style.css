@@ -33,7 +33,7 @@
 }
 
 #container-grid{
-    margin: 30px;
+    margin: 20px;
     height: 500px;
     width: 500px;
     border: 3px solid black;
@@ -73,5 +73,5 @@
 }
 
 .score{
-    padding-top: 30px;
+    margin: 20px;
 }

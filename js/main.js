@@ -25,6 +25,8 @@ for (let i = 0; i < optionsDifficulty.length; i++) {
 
 // evento che al click del tasto play richiama la funzione genera griglia
 button.addEventListener('click', function(){
+    score = 0;
+    scoreUser.innerText = `Il tuo punteggio è: ${score}`
     gameOver = false;
     bombList = generateBombList(16, currentDifficulty);
     getGrid(containerGrid, currentDifficulty, classDifficulty);
