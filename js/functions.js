@@ -41,7 +41,7 @@ function generateBox(text, difficultyClass) {
 
   // evento che al click fa comparire il testo e lo colora
   box.addEventListener("click", function () {
-    box.innerText = text;
+    // box.innerText = text;
     clickbox(this);
   });
   return box;
@@ -49,7 +49,11 @@ function generateBox(text, difficultyClass) {
 
 // funzione che al click fa cambiare colore al box clickato
 function clickbox(element) {
-  const boxIndex = parseInt(element.innerText);
+  if (gameOver) return; // Blocca ulteriori interazioni se il gioco è finito
+
+  if (element.classList.contains("clicked")) return; // Blocca il conteggio del punteggio se la casella è già stata cliccata
+
+  const boxIndex = parseInt(element.getAttribute("data-index"));
   console.log("Casella cliccata con testo:", boxIndex);
   if (!gameOver) {
     score++;
@@ -64,7 +68,7 @@ function clickbox(element) {
     } else {
       console.log("vuoto");
       element.classList.add("clicked");
-      scoreUser.innerText = `Il tuo punteggio è: ${score}`;
+      scoreUser.innerText = `Score: ${score}`;
 
       element.innerText = "";
 
