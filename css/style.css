@@ -96,3 +96,15 @@ body{
     outline-offset: 15px;
     text-shadow: 1px 1px 2px #427388; 
 }
+
+@media screen and (max-width: 540px) {
+    
+#container-grid{
+    margin: 10px;
+    height: 350px;
+    width: 350px;
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+  }
