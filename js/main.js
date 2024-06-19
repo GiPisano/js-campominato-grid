@@ -33,3 +33,4 @@ button.addEventListener('click', function(){
     console.clear();
 });
 
+console.log('B' + 'a' + + 'a' + 'a' )
