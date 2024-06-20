@@ -9,7 +9,7 @@ let bombList = [];
 let gameOver = false;
 let score = 0;
 
-// scorro nelle opzioini della difficoltà
+// scorro nelle opzioni della difficoltà
 for (let i = 0; i < optionsDifficulty.length; i++) {
   let difficultyOption = optionsDifficulty[i];
 
